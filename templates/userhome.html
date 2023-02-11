@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}老八问答-登录{% endblock %}
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col mt-5"></div>
+        <div class="col mt-5">
+            <div>
+                <h2>修改名称</h2>
+                <form action="{{ url_for('user.rename') }}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                    <label for="exampleInputPassword1">新用户名</label>
+                    <input type="text" class="form-control" name="newname">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">确认修改</button>
+                </form>
+            </div>
+            <div>
+                <h2>上传头像</h2>
+                <form action="{{ url_for('user.upload') }}" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" class="input">
+                    <input type="submit" value="上传" class="input button">
+                </form>
+            </div>
+
+        </div>
+        <div class="col mt-5"></div>
+    </div>
+{% endblock %}
